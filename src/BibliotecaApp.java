@@ -12,6 +12,9 @@ public class BibliotecaApp{
         livro1.emprestarLivro();
         livro1.devolver();
         System.out.println("\nTotal de livros: " + Livro.getTotalLivros());
+        System.out.println(livro1.getTitulo());
+        System.out.println(livro1.getAutor());
+        System.out.println(livro1.isDisponivel());
 
     }
 }

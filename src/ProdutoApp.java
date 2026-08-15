@@ -11,6 +11,13 @@ public class ProdutoApp {
         produto2.exibirDados();
         produto3.exibirDados();
         System.out.println("\nTotal de Produtos: " + Produto.getTotalProdutos());
+        System.out.println(produto1.getNome());
+        System.out.println(produto1.getPreco());
+        System.out.println(produto1.getQuantidadeEstoque());
+        produto1.setPreco(-10.0);
+        System.out.println("Preço após tentativa inválida: " + produto1.getPreco());
+        produto1.setPreco(50.0);
+        System.out.println("Preço após alteração válida: " + produto1.getPreco());
 
     }
 }

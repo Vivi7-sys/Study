@@ -1,9 +1,23 @@
 public class Produto {
-    public String nome;
-    public double preco;
-    public int quantidadeEstoque;
+    private String nome;
+    private double preco;
+    private int quantidadeEstoque;
     public static int totalProdutos = 0;
 
+    public String getNome(){ return nome;}
+    public double getPreco(){ return preco;}
+    public int getQuantidadeEstoque(){ return quantidadeEstoque;}
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public void setPreco(double preco){
+        if(preco < 0){
+            System.out.println("Valor Invalído!");
+        }
+        else {
+            this.preco = preco;
+        }
+    }
     public Produto(){
         this("Produto sem nome", 0.0, 0);
     }

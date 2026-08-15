@@ -1,28 +1,33 @@
 public class Livro{
-    String titulo;
-    String autor;
-    boolean disponivel;
+    private String titulo;
+    private String autor;
+    private boolean Disponivel;
     static int TotalLivros = 0;
 
+    public String getTitulo(){ return titulo;}
+    public String getAutor(){ return autor;}
+    public boolean isDisponivel(){
+        return Disponivel;
+    }
 
     public Livro(){
         this("sem titulo", "sem autor");
     }
-    public Livro(String titulo, String autor){
-        this.titulo = titulo;
-        this.autor =  autor;
-        this.disponivel = disponivel;
+    public Livro(String Titulo, String Autor){
+        this.titulo = Titulo;
+        this.autor =  Autor;
+        this.Disponivel = true;
         TotalLivros ++;
     }
     public void exibir(){
         System.out.println("Titulo do livro: " + titulo);
         System.out.println("Autor do livro: " + autor);
-        System.out.println("O livro está disponivel ? "+ disponivel);
+        System.out.println("O livro está disponivel ? "+ Disponivel);
     }
     public void emprestarLivro(){
-        if(disponivel){
+        if(Disponivel){
             System.out.println("Livro emprestado");
-            disponivel = false;
+            Disponivel = false;
         }
         else System.out.println("Esse livro ja foi emprestado");
     }
@@ -31,12 +36,12 @@ public class Livro{
     }
     public void devolver(){
         System.out.println("O livro foi devolvido");
-        disponivel = true;
+        Disponivel = true;
     }
     public void exibirFicha(){
         System.out.println("Titulo do livro: " + titulo);
         System.out.println("Autor do livro: " + autor);
-        if(disponivel){
+        if(Disponivel){
             System.out.println("Livro disponível");
         }
         else System.out.println("Livro emprestado");
