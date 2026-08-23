@@ -1,0 +1,21 @@
+public class Produto {
+    public String nome;
+    public double preco;
+    public int quantidadeEstoque;
+    public int QuantidadeIncial;
+    public static int totalProdutos;
+
+    public produto(){
+        this("Produto sem nome", preco =0.0, quantidadeEstoque=0);
+    }
+    public produto(String nome, double preco, int QuantidadeInicial){
+        this.nome = nome;
+        this.preco = preco;
+        this.QuantidadeIncial = QuantidadeInicial;
+        totalProdutos++;
+    }
+    static int getTotalProdutos(){
+        return Produto.getTotalProdutos();
+    }
+
+}
