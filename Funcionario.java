@@ -1,58 +1,37 @@
 public class Funcionario {
-    private String nome;
-    private double salario;
-    private int cargaHorariaSemanal;
+    protected String nome;
+    protected double salario;
 
-    //setters
-    public void setNome(String nome){
-        if(nome.isEmpty() || nome.length() > 50){
-            System.out.println("Nome Inválido!");
-        }
-        else{
-            this.nome = nome;
-        }
+    public Funcionario() {
+        this("sem nome",0);
     }
-    public void setSalario(double salario){
-        if(salario >= 0){
-            this.salario = salario;
-        }
-        else{
-            System.out.println("Salario Inválido!");
-        }
-    }
-    public void setCargaHorariaSemanal(int cargaHorariaSemanal){
-        if(cargaHorariaSemanal >= 1 && cargaHorariaSemanal <= 44){
-            this.cargaHorariaSemanal = cargaHorariaSemanal;
-        }
-        else {
-            System.out.println("Carga horaria invalida!");
-
-        }
-    }
-    // getters
-    public String getnome(){ return this.nome = nome;}
-    public double getSalario(){ return this.salario = salario;}
-    public int getCargaHorariaSemanal(){ return  this.cargaHorariaSemanal = cargaHorariaSemanal;}
-
-    // exibir dados
-    public void exibir(){
-        System.out.println("Nome: " + nome);
-        System.out.println("Salario: " + salario);
-        System.out.println("Carga Horaria Semanal: " + cargaHorariaSemanal);
+    public Funcionario(String nome, double salario) {
+        this.salario = salario;
+        this.nome = nome;
     }
 
-    // construtor
-    public Funcionario(String nome, double salario, int cargaHorariaSemanal){
-        setNome(nome);
-        setSalario(salario);
-        setCargaHorariaSemanal(cargaHorariaSemanal);
-
-    }
-    // construtor padrão
-    public Funcionario (){
-        this("Sem nome", 0.0, 1);
+    public String getNome() {
+        return nome;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public double getSalario() {
+        return salario;
+    }
 
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+
+    public double calcularBonus(){
+        return this.salario = this.salario * 0.15; // 15% de bonus
+    }
+    public void exibirDados(){
+            System.out.printf("Nome: %s Salario: %.2f Bonus: %.2f Total a receber: %.2f%n",
+                    this.nome, this.salario, this.calcularBonus(), (this.calcularBonus() + this.salario));
+
+    }
 }
